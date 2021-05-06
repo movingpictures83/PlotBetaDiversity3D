@@ -1,0 +1,4 @@
+biomfile	plugins/PlotBetaDiversity3D/example/taxa.biom
+tree	plugins/PlotBetaDiversity3D/example/rep_set.tre
+mapping	plugins/PlotBetaDiversity3D/example/Fasting_Map.txt
+depth	100

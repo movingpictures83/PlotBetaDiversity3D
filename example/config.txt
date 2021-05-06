@@ -1,0 +1,2 @@
+Prefix plugins/PlotBetaDiversity3D/example
+Plugin PlotBetaDiversity3D inputfile parameters.plotbetadiversity3D.txt outputfile beta_div
