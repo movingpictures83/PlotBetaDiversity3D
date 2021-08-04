@@ -22,16 +22,16 @@ void PlotBetaDiversity3DPlugin::run() {
 void PlotBetaDiversity3DPlugin::output(std::string file) {
 //beta_diversity.py -i filtered_otu_table.biom -m euclidean,weighted_unifrac,unweighted_unifrac -t rep_set.tre -o beta_div
    std::string command = "beta_diversity_through_plots.py ";
- command += "-i "+parameters["biomfile"];
- command += " -m "+parameters["mapping"];
+ command += "-i "+std::string(PluginManager::prefix())+parameters["biomfile"];
+ command += " -m "+std::string(PluginManager::prefix())+parameters["mapping"];
  command += " -e "+parameters["depth"];
  for (int i = 0; i < metrics.size(); i++) {
     command += metrics[i];
     if (i != metrics.size()-1){command += ",";}
     else {command += " ";}
  }
- command += " -t "+parameters["tree"]+" ";
- command += "-o "+file+"; cp "+file+"/* "+file+"/..; export PYTHONPATH=OLDPATH";
+ command += " -t "+std::string(PluginManager::prefix())+parameters["tree"]+" ";
+ command += "-f -o "+file+"; cp "+file+"/*.txt "+file+"/..";//; export PYTHONPATH=OLDPATH";
  std::cout << command << std::endl;
 
  system(command.c_str());
